@@ -1,0 +1,286 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Note from '~/components/widgets/Note.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'FastFlow for WooCommerce',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <Hero
+    tagline="WooCommerce Redirect to Page or URL on Add to Cart"
+    actions={[{ variant: 'primary', text: 'Boost Conversions Now', href: '#pricing' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'FastFlow Hero Image',
+    }}
+  >
+    <Fragment slot="title">
+      Direct Checkout. <br /> More Sales. <br /> Zero Friction.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Skip the cart, redirect to custom URLs, and streamline your WooCommerce checkout flow in minutes.
+      <br /><br />
+      <em>Compatible with WooCommerce 9.x — No coding required.</em>
+    </Fragment>
+  </Hero>
+
+  <!-- Problem Section -->
+  <Content
+    title="The Problem: The Conversion Killer"
+    subtitle="Every extra click is a lost sale. The default WooCommerce flow forces customers through Product → Cart → Checkout. That's three steps before they even enter payment details."
+    items={[
+      {
+        title: 'Shoppers drop off',
+        description: 'Customers abandon their carts when faced with too many steps.',
+        icon: 'tabler:user-off',
+      },
+      {
+        title: 'Carts get abandoned',
+        description: 'The cart page becomes a friction point that kills conversions.',
+        icon: 'tabler:shopping-cart-off',
+      },
+      {
+        title: 'Revenue slips through your fingers',
+        description: 'Each abandoned cart represents lost revenue for your business.',
+        icon: 'tabler:coin-off',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Conversion Problem',
+    }}
+  />
+
+  <!-- Solution Section -->
+  <Content
+    isReversed
+    title="The Solution: Frictionless Checkout"
+    subtitle="FastFlow for WooCommerce cuts the process in half."
+    items={[
+      {
+        title: 'Direct Checkout',
+        description: 'Send buyers straight to checkout the moment they click "Add to Cart."',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Custom Redirects',
+        description: 'Point customers to any page or URL — upsells, affiliate links, or forms.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Fewer clicks. Faster flow. More sales.',
+        description: 'Streamline the customer journey and boost your conversion rates.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'FastFlow Solution',
+    }}
+  />
+
+  <!-- Use Cases Section -->
+  <Steps
+    title="Key Use Cases"
+    tagline="Perfect for various business scenarios"
+    items={[
+      {
+        title: 'Direct Checkout',
+        description: 'Perfect for stores that want instant purchases without distractions.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Affiliate Products',
+        description: 'Seamlessly redirect "Add to Cart" buttons to external vendor sites.',
+        icon: 'tabler:external-link',
+      },
+      {
+        title: 'Terms & Flows',
+        description: 'Insert mandatory steps like Terms & Conditions or forms before checkout.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'Complex Funnels',
+        description: 'Push customers to upsell or cross-sell pages after adding to cart.',
+        icon: 'tabler:chart-funnel',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Use Cases',
+    }}
+  />
+
+  <!-- Features Section -->
+  <Features
+    title="Features List"
+    tagline="Everything you need for seamless checkout"
+    items={[
+      {
+        title: 'Per-product settings',
+        description: 'Granular control over redirect behavior for each product.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Custom button text',
+        description: 'Replace "Add to Cart" with "Buy Now," "Visit Partner," or anything you like.',
+        icon: 'tabler:text',
+      },
+      {
+        title: 'Hide WooCommerce messages',
+        description: 'Hide messages like "Added to cart" for a cleaner UX.',
+        icon: 'tabler:eye-off',
+      },
+      {
+        title: 'AJAX support',
+        description: 'Smooth, modern interactions without page reloads.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Global or product-level redirects',
+        description: 'Maximum flexibility with site-wide or per-product settings.',
+        icon: 'tabler:world',
+      },
+    ]}
+  />
+
+  <!-- Compatibility Section -->
+  <Note
+    icon="tabler:check"
+    title="Compatibility & Tech Specs"
+    description="Works flawlessly with WooCommerce Blocks and Block Themes. Fully compatible with Dokan Multi-vendor and WordPress Multisite setups. Lightweight & optimized: Built for speed, hosted on Cloudflare, and won't slow down your store."
+  />
+
+  <!-- Social Proof Section -->
+  <Testimonials
+    title="Social Proof & Trust Indicators"
+    testimonials={[
+      {
+        testimonial: 'FastFlow increased my sales by 20% in the first week. Customers love the instant checkout.',
+        name: 'Store Owner',
+        job: 'Fashion Niche',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Store Owner',
+        },
+      },
+      {
+        testimonial: 'Finally, a plugin that makes affiliate redirects painless. Perfect for my affiliate store.',
+        name: 'Affiliate Marketer',
+        job: 'Digital Products',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Affiliate Marketer',
+        },
+      },
+      {
+        testimonial: 'We use it to insert a custom form before checkout. Works flawlessly and keeps our funnel tight.',
+        name: 'SaaS Vendor',
+        job: 'Software Business',
+        image: {
+          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          alt: 'SaaS Vendor',
+        },
+      },
+    ]}
+  />
+
+  <!-- Satisfaction Guarantee -->
+  <Note
+    icon="tabler:shield-check"
+    title="Satisfaction Guarantee"
+    description="We stand behind FastFlow. If you're not 100% satisfied, we offer a 30-day money-back guarantee. Plus, you'll get premium support and regular updates to keep your store running smoothly."
+  />
+
+  <!-- Pricing Section -->
+  <Pricing
+    title="Pricing"
+    subtitle="Choose the plan that fits your business"
+    prices={[
+      {
+        title: 'Single Site',
+        price: '39',
+        period: 'one-time',
+        items: [
+          { description: '1 site license', icon: 'tabler:check' },
+          { description: 'Regular updates', icon: 'tabler:check' },
+          { description: 'Premium support', icon: 'tabler:check' },
+        ],
+        callToAction: { text: 'Get Started', href: '#', variant: 'secondary' },
+      },
+      {
+        title: '5 Sites',
+        price: '99',
+        period: 'one-time',
+        items: [
+          { description: 'Up to 5 sites', icon: 'tabler:check' },
+          { description: 'Regular updates', icon: 'tabler:check' },
+          { description: 'Premium support', icon: 'tabler:check' },
+        ],
+        callToAction: { text: 'Get Started', href: '#', variant: 'secondary' },
+      },
+      {
+        title: 'Unlimited',
+        price: '199',
+        period: 'one-time',
+        items: [
+          { description: 'Unlimited sites', icon: 'tabler:check' },
+          { description: 'Lifetime updates', icon: 'tabler:check' },
+          { description: 'Lifetime support', icon: 'tabler:check' },
+        ],
+        callToAction: { text: 'Get Started', href: '#', variant: 'primary' },
+        hasRibbon: true,
+        ribbonTitle: 'BEST VALUE',
+      },
+    ]}
+  />
+
+  <!-- FAQ Section -->
+  <FAQs
+    title="FAQ"
+    items={[
+      {
+        title: 'Does this work with Variable products?',
+        description:
+          'Yes, fully supported. FastFlow works with all WooCommerce product types including simple, variable, and grouped products.',
+      },
+      {
+        title: 'Can I set different redirects for different products?',
+        description:
+          'Yes, you have granular per-product control. Set global defaults or override them on individual products.',
+      },
+      {
+        title: 'Does it work with my theme?',
+        description:
+          'Designed to work with all standard WooCommerce themes, including Block Themes and popular third-party themes.',
+      },
+    ]}
+  />
+
+  <!-- Final CTA Section -->
+  <CallToAction
+    title="Stop losing sales to abandoned carts."
+    subtitle="FastFlow for WooCommerce gives you instant checkout, flexible redirects, and frictionless funnels — all in one lightweight plugin."
+    actions={[{ variant: 'primary', text: 'Boost Conversions Now', href: '#pricing' }]}
+  />
+</Layout>

@@ -1,0 +1,3 @@
+- [x] Update src/pages/homes/test.astro to include all sections from copy/test.md using appropriate components (Hero for hero section, Content/Features for problem/solution, Steps for use cases, Features for features list, Note for compatibility, Testimonials for social proof, Pricing for pricing, FAQs for FAQ, CallToAction for final CTA)
+- [x] Verify the updated page renders correctly by running npm run dev and checking /homes/test
+- [x] Run npm run check to ensure no linting or type errors
