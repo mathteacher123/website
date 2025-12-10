@@ -8,6 +8,7 @@ import { ANALYTICS } from 'astrowind:config';
     <GoogleAnalytics
       id={String(ANALYTICS.vendors.googleAnalytics.id)}
       partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
+      data-category="analytics"
     />
   ) : null
 }

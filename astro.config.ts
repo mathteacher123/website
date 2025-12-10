@@ -9,9 +9,11 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import react from '@astrojs/react';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
+import cookieconsent from '@jop-software/astro-cookieconsent';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
@@ -68,6 +70,54 @@ export default defineConfig({
 
     astrowind({
       config: './src/config.yaml',
+    }),
+
+    react(),
+
+    cookieconsent({
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        analytics: {
+          enabled: false,
+          readOnly: false,
+        },
+      },
+      language: {
+        default: 'en',
+        translations: {
+          en: {
+            consentModal: {
+              title: 'We use cookies',
+              description:
+                'We use cookies to enhance your experience. By continuing to use our site, you agree to our cookie policy.',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Accept necessary',
+              showPreferencesBtn: 'Manage preferences',
+            },
+            preferencesModal: {
+              title: 'Cookie preferences',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Accept necessary',
+              savePreferencesBtn: 'Save preferences',
+              closeIconLabel: 'Close',
+              sections: [
+                {
+                  title: 'Necessary cookies',
+                  description: 'These cookies are essential for the website to function properly.',
+                },
+                {
+                  title: 'Analytics cookies',
+                  description: 'These cookies help us understand how visitors interact with our website.',
+                  linkedCategory: 'analytics',
+                },
+              ],
+            },
+          },
+        },
+      },
     }),
   ],
 
