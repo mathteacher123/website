@@ -1,0 +1,27 @@
+---
+interface Props {
+  items: Array<{
+    text: string;
+    href?: string;
+  }>;
+}
+
+const { items } = Astro.props;
+---
+
+<div class="flex items-center gap-2 text-sm text-text-muted mb-6">
+  {
+    items.map((item, index) => (
+      <Fragment>
+        {index > 0 && <span class="material-symbols-outlined text-[16px]">chevron_right</span>}
+        {item.href ? (
+          <a class="hover:text-primary" href={item.href}>
+            {item.text}
+          </a>
+        ) : (
+          <span class="text-text-main font-medium">{item.text}</span>
+        )}
+      </Fragment>
+    ))
+  }
+</div>

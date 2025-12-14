@@ -25,6 +25,10 @@ export const headerData = {
           text: 'Test',
           href: getPermalink('/homes/test'),
         },
+        {
+          text: 'plugin',
+          href: getPermalink('/homes/plugin'),
+        },
       ],
     },
     {

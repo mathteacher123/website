@@ -1,0 +1,284 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Breadcrumb from '~/components/ui/Breadcrumb.astro';
+import PluginHero from '~/components/widgets/PluginHero.astro';
+import ScreenshotCarousel from '~/components/widgets/ScreenshotCarousel.astro';
+import PluginDetails from '~/components/widgets/PluginDetails.astro';
+
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'Checkout Optimizer Pro',
+};
+---
+
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Spline+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light text-text-main font-display antialiased overflow-x-hidden transition-colors duration-300"
+  >
+    <Layout metadata={metadata}>
+      <Fragment slot="header">
+        <Header {...headerData} isSticky />
+      </Fragment>
+
+      <Breadcrumb
+        items={[
+          { text: 'Home', href: '/' },
+          { text: 'Plugins', href: '#' },
+          { text: 'WooCommerce Checkout Optimizer' },
+        ]}
+      />
+
+      <PluginHero
+        title="Checkout Optimizer Pro"
+        subtitle="Drastically reduce cart abandonment with a streamlined, one-page checkout experience. Designed for speed and conversion."
+        badge={{
+          text: 'v2.4 Compatible with WC 8.0+',
+          icon: 'verified',
+        }}
+        rating={{
+          value: 4.9,
+          count: 2000,
+        }}
+        pricing={{
+          price: '$49',
+          period: 'Billed annually',
+        }}
+        actions={[
+          { text: 'Buy Now', href: '#', variant: 'primary', icon: 'arrow_forward' },
+          { text: 'Live Demo', href: '#', variant: 'secondary' },
+        ]}
+        image={{
+          src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtbOgebh_WoHzw8FQ8i4j-RvJRw55QAw1VmpAFuBu_ZghPCNjrxkJ0Mo13gTTvcjHbI8PSdzMl0pIUFZPIuZGA-duEXxEc9UMuPAuvzw-qDpCBpze5vCFXpoofyArRY5g0WV3CqIgogFPlnwPvFavyOI9cN4_bG8_Ae0XITSafiPD9ecbxOIxvRQaa7sAeXt4XfDhmerHw5AmL0gOYklx1Ue76i4Gi25Nb8SkYl2Ipqc85uJ10uO-uxDF4D6V9Vm9Ikm4GL5K8IIU',
+          alt: 'Screenshot of the Checkout Optimizer plugin dashboard interface showing analytics graphs',
+        }}
+      />
+
+      <section class="py-16 bg-background-subtle">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-text-main sm:text-4xl">Everything you need</h2>
+            <p class="mt-4 text-lg text-text-muted max-w-2xl">
+              Optimize every step of the customer journey with powerful built-in features.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">rocket_launch</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">One-Click Setup</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  No coding required. Activate the plugin and instantly replace your default WooCommerce checkout.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">smartphone</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">Mobile Optimized</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  Fully responsive design ensures a seamless checkout experience on iOS and Android devices.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">bar_chart</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">Analytics Dashboard</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  Track abandonment rates, revenue recovery, and checkout speed directly from WP Admin.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">palette</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">Visual Editor</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  Customize colors, fonts, and field layouts to match your brand identity perfectly.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">bolt</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">Address Autocomplete</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  Reduce typing errors and speed up the process with Google Maps address suggestions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined">lock</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-text-main">Secure &amp; Compliant</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                  GDPR compliant and supports all major payment gateways securely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ScreenshotCarousel
+        title="See it in action"
+        subtitle="Take a tour of the settings and customer view."
+        items={[
+          {
+            image:
+              'https://lh3.googleusercontent.com/aida-public/AB6AXuBhIlR_jOeKJzmV04nASiWXV84j00XLf1b2iUtlwzlDl1Ep_rjEC9xkFT4ZpDp6MQDsJhinAdbOAziK8xIIMvVSwR-RjQvMlW8RtQ_CpusU0QZXhOOcPIuyOfyyWHplGZJTcsqdxzxkebPpFHryHvBY1BHlCfbzguNqr8tBXMSnkb8WUnHprYBEHL3abKjCTa0BYRtxAFFdrTrkt_ekVS17Y9yt9Gu9eA9QX8zWO7_KB6UfaLVdSi5_PX0UQDJC8R37yg0bKhX1MUA',
+            alt: 'Screenshot of the single page checkout form layout on a desktop screen',
+            title: 'Modern Checkout Layout',
+            description: 'A clean, distract-free design.',
+          },
+          {
+            image:
+              'https://lh3.googleusercontent.com/aida-public/AB6AXuCLVLsam1StXD844mehHj2UOrWwl1EWFNXvHf0oEa8CN-rlZeiLxsz9tNgbQ0pdTCzmsnMN_2uhZbqhCyoSi5GCRqFrhIsrx0IFzkVb2DI-fBuI6EU3ubqXGnZksJY3ZfvqerpVCJaTo4qmYAbNvDret4pn-XEd5-zQ-E92yH2aJ84MFUaA1xthCw4wn33uGaaPoTNp2wEsdgZl5nT4HfzRlW5mEaqz9BMNFAlGD5MhGZJl-rRjlUSMhIeedi4x13C0X3X_7sMWMS8',
+            alt: 'Three mobile phones displaying the responsive checkout interface',
+            title: 'Mobile Responsiveness',
+            description: 'Optimized for thumb-scrolling and easy input.',
+          },
+          {
+            image:
+              'https://lh3.googleusercontent.com/aida-public/AB6AXuBSVChsH_7isfTbp8Zz5j4_IsTOd0Q2JaX-qtiuYsi5HFwp8u0d2gcwIlCWyJ9SNFQj_7zmc7EoDuroOkrISTUVo5ejRMSywW6TcyYNkpqAT3MJqJd6cHZdoixeNkYqEP7r_CUpWS19p35Quk3Vc3ulNEa-y6FjVg2DWjhHgpKrLd06PY-z3Uuc4lU3NcRGoFf6hScb83CsN37RLpdlXyaQBKRpTDpVvcfOpDlofgYWH1ueCwyH_TM8ue_gl0Qpq4NQBUEGcWziFy8',
+            alt: 'The plugin settings panel showing toggle switches for various features',
+            title: 'Easy Configuration',
+            description: 'Toggle features on and off with a single click.',
+          },
+        ]}
+      />
+
+      <section class="py-16 bg-background-subtle">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-12 lg:grid-cols-3">
+            <PluginDetails
+              version="2.4.1"
+              lastUpdated="October 24, 2023"
+              wordpress="6.0 or higher"
+              php="7.4 or higher"
+              support={{
+                title: 'Need help?',
+                description: 'Our support team is available 24/7 to help you with installation.',
+                linkText: 'Contact Support',
+                linkHref: '#',
+              }}
+            />
+            <div class="lg:col-span-2">
+              <div
+                class="relative overflow-hidden rounded-3xl border border-primary bg-white p-8 sm:p-12 shadow-2xl shadow-blue-900/10"
+              >
+                <div
+                  class="absolute top-0 right-0 rounded-bl-2xl bg-accent px-4 py-2 text-xs font-black uppercase text-blue-900"
+                >
+                  Best Value
+                </div>
+                <div class="flex flex-col lg:flex-row gap-8 lg:items-center justify-between">
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-text-main">Single Site License</h3>
+                    <p class="mt-2 text-text-muted">Get full access to all features for one domain.</p>
+                    <ul class="mt-6 space-y-3">
+                      <li class="flex items-center gap-3 text-sm text-text-muted">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                          <span class="material-symbols-outlined text-[16px]">check</span>
+                        </span>
+                        1 Year of Updates & Support
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-text-muted">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                          <span class="material-symbols-outlined text-[16px]">check</span>
+                        </span>
+                        30-Day Money Back Guarantee
+                      </li>
+                      <li class="flex items-center gap-3 text-sm text-text-muted">
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                          <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                            <span class="material-symbols-outlined text-[16px]">check</span>
+                          </span>
+                        </span>
+                        Access to all future features
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex flex-col items-center gap-4 min-w-[200px] border-t lg:border-t-0 lg:border-l border-slate-100 pt-6 lg:pt-0 lg:pl-8"
+                  >
+                    <div class="text-center">
+                      <span class="block text-4xl font-bold text-text-main">$49</span>
+                      <span class="block text-sm text-text-muted">/ year</span>
+                    </div>
+                    <button
+                      class="w-full rounded-full bg-primary py-3 px-6 text-center font-bold text-white transition-transform hover:scale-105 shadow-md shadow-blue-600/20 hover:bg-primary-hover"
+                    >
+                      Purchase Now
+                    </button>
+                    <p class="text-xs text-center text-text-muted">Secure payment via Stripe</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  </body>
+</html>

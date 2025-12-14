@@ -1,0 +1,51 @@
+---
+interface Props {
+  version: string;
+  lastUpdated: string;
+  wordpress: string;
+  php: string;
+  support: {
+    title: string;
+    description: string;
+    linkText: string;
+    linkHref: string;
+    icon?: string;
+  };
+}
+
+const { version, lastUpdated, wordpress, php, support } = Astro.props;
+---
+
+<div class="lg:col-span-1 flex flex-col gap-8">
+  <div>
+    <h3 class="text-xl font-bold text-text-main mb-4">Plugin Details</h3>
+    <div class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+        <span class="text-sm text-text-muted">Version</span>
+        <span class="text-sm font-medium text-text-main">{version}</span>
+      </div>
+      <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+        <span class="text-sm text-text-muted">Last Updated</span>
+        <span class="text-sm font-medium text-text-main">{lastUpdated}</span>
+      </div>
+      <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+        <span class="text-sm text-text-muted">WordPress</span>
+        <span class="text-sm font-medium text-text-main">{wordpress}</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-sm text-text-muted">PHP Version</span>
+        <span class="text-sm font-medium text-text-main">{php}</span>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-2xl bg-blue-50 border border-blue-100 p-6">
+    <h4 class="font-bold text-text-main mb-2 flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary">support_agent</span>
+      {support.title}
+    </h4>
+    <p class="text-sm text-text-muted mb-4">{support.description}</p>
+    <a class="text-sm font-bold text-primary hover:text-primary-hover hover:underline" href={support.linkHref}>
+      {support.linkText}
+    </a>
+  </div>
+</div>

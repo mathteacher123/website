@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  items: Array<{
+    image: string;
+    alt: string;
+    title: string;
+    description: string;
+  }>;
+}
+
+const { title, subtitle, items } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-text-main sm:text-4xl">{title}</h2>
+        {subtitle && <p class="mt-4 text-lg text-text-muted">{subtitle}</p>}
+      </div>
+      <div class="flex gap-2">
+        <button
+          id="carousel-prev"
+          class="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 text-text-main transition-colors"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <button
+          id="carousel-next"
+          class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md hover:scale-105 transition-transform hover:bg-primary-hover"
+        >
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+    <div
+      id="carousel-container"
+      class="flex gap-6 overflow-x-auto pb-8 snap-x [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+    >
+      {
+        items.map((item) => (
+          <div class="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] snap-center flex-shrink-0">
+            <div class="flex flex-col gap-4 rounded-2xl bg-white p-4 border border-slate-200 shadow-sm">
+              <div
+                class="w-full aspect-video bg-cover bg-center rounded-xl"
+                style={`background-image: url('${item.image}')`}
+              />
+              <div class="px-2">
+                <h3 class="text-lg font-bold text-text-main">{item.title}</h3>
+                <p class="text-sm text-text-muted">{item.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('carousel-container') as HTMLElement;
+    const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+
+    if (!container || !prevBtn || !nextBtn) return;
+
+    const scrollAmount = 600; // Approximate width of one slide
+
+    prevBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Update button states based on scroll position
+    const updateButtons = () => {
+      const isAtStart = container.scrollLeft <= 10;
+      const isAtEnd = container.scrollLeft >= container.scrollWidth - container.clientWidth - 10;
+
+      prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+      prevBtn.disabled = isAtStart;
+      nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+      nextBtn.disabled = isAtEnd;
+    };
+
+    container.addEventListener('scroll', updateButtons);
+    updateButtons(); // Initial state
+  });
+</script>

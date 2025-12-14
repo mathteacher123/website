@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WooCommerce Checkout Optimizer - AstroPlugins</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0056b3', // Deep blue from the logo background
+              'primary-hover': '#004494',
+              accent: '#ffe600', // Yellow from the logo X
+              'accent-light': '#fff9c2',
+              'background-light': '#ffffff',
+              'background-subtle': '#f8fafc',
+              'surface-light': '#ffffff',
+              'text-main': '#0f172a',
+              'text-muted': '#64748b',
+            },
+            fontFamily: {
+              display: ['Spline Sans', 'sans-serif'],
+              body: ['Noto Sans', 'sans-serif'],
+            },
+            borderRadius: { DEFAULT: '1rem', lg: '2rem', xl: '3rem', full: '9999px' },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light text-text-main font-display antialiased overflow-x-hidden transition-colors duration-300"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg">
+              <img
+                alt="AstroPlugins Logo"
+                class="h-full w-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZo-Qfdh5dVDKF691zKQOPck0e2HwXGUeEoEr6xDvGylimRMWpSHsaOHIoU1O_xbBInk77Fc4aqkunz09lW8BlFJrhC4sl21dZVu_wPC6dY9atB6ikYZDR6B7kutNSEeqShiwDwRzKNm_Cz14UHVJiuiJQKwJhRB0TVm74BVkIRUZtwmdz-xqUbedAzOxPLDB0kC4nrhjbEKY0tAFwE6L-lrm2WGYv8UWU_6y8WAA-A4wP3CdJy9sBdmmLHsVodUOFAUTjq5_69v0"
+              />
+            </div>
+            <span class="text-xl font-bold tracking-tight text-text-main">AstroPlugins</span>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#">Home</a>
+            <a class="text-sm font-medium text-text-main" href="#">Plugins</a>
+            <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#">Contact Us</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="hidden sm:flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white transition-transform hover:scale-105 active:scale-95 shadow-md shadow-blue-900/10 hover:bg-primary-hover"
+            >
+              My Account
+            </button>
+            <button
+              class="flex md:hidden h-10 w-10 items-center justify-center rounded-full hover:bg-slate-100 transition-colors text-text-main"
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-2 text-sm text-text-muted">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            <a class="hover:text-primary" href="#">Plugins</a>
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            <span class="text-text-main font-medium">WooCommerce Checkout Optimizer</span>
+          </div>
+        </div>
+        <section class="relative overflow-hidden pt-8 pb-16 lg:pt-12 lg:pb-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              <div class="flex flex-col gap-6">
+                <div
+                  class="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wide"
+                >
+                  <span class="material-symbols-outlined text-[16px]">verified</span>
+                  v2.4 Compatible with WC 8.0+
+                </div>
+                <h1 class="text-4xl font-black leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                  Checkout
+                  <span class="text-primary decoration-accent decoration-4 underline-offset-4">Optimizer</span> Pro
+                </h1>
+                <p class="text-lg leading-relaxed text-text-muted max-w-lg">
+                  Drastically reduce cart abandonment with a streamlined, one-page checkout experience. Designed for
+                  speed and conversion.
+                </p>
+                <div class="flex items-center gap-4 text-sm font-medium text-text-muted">
+                  <div class="flex items-center gap-1">
+                    <div class="flex text-yellow-400">
+                      <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                      <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                      <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                      <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                      <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                    </div>
+                    <span class="ml-1 text-text-main font-bold">4.9/5</span>
+                  </div>
+                  <span class="h-1 w-1 rounded-full bg-slate-300"></span>
+                  <span>2,000+ Active Installs</span>
+                </div>
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-center pt-4">
+                  <div class="flex flex-col">
+                    <span class="text-3xl font-bold text-text-main">$49</span>
+                    <span class="text-xs text-text-muted">Billed annually</span>
+                  </div>
+                  <div class="flex flex-1 gap-3 w-full sm:w-auto">
+                    <button
+                      class="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-primary-hover active:scale-95 sm:flex-none"
+                    >
+                      <span>Buy Now</span>
+                      <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                    </button>
+                    <button
+                      class="flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 text-base font-bold text-text-main transition-colors hover:bg-slate-50 active:scale-95 sm:flex-none"
+                    >
+                      Live Demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="relative w-full">
+                <div
+                  class="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-tr from-blue-100 to-yellow-100 opacity-60 blur-3xl"
+                ></div>
+                <div
+                  class="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/50"
+                >
+                  <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    data-alt="Screenshot of the Checkout Optimizer plugin dashboard interface showing analytics graphs"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtbOgebh_WoHzw8FQ8i4j-RvJRw55QAw1VmpAFuBu_ZghPCNjrxkJ0Mo13gTTvcjHbI8PSdzMl0pIUFZPIuZGA-duEXxEc9UMuPAuvzw-qDpCBpze5vCFXpoofyArRY5g0WV3CqIgogFPlnwPvFavyOI9cN4_bG8_Ae0XITSafiPD9ecbxOIxvRQaa7sAeXt4XfDhmerHw5AmL0gOYklx1Ue76i4Gi25Nb8SkYl2Ipqc85uJ10uO-uxDF4D6V9Vm9Ikm4GL5K8IIU');
+                    "
+                  ></div>
+                  <div
+                    class="absolute bottom-6 left-6 right-6 flex items-center justify-between rounded-xl bg-white/90 p-4 backdrop-blur-md border border-slate-100 shadow-sm"
+                  >
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white shadow-md"
+                      >
+                        <span class="material-symbols-outlined">trending_up</span>
+                      </div>
+                      <div>
+                        <p class="text-sm font-bold text-text-main">Conversion Rate</p>
+                        <p class="text-xs text-blue-600 font-medium">+24% this month</p>
+                      </div>
+                    </div>
+                    <div class="text-slate-400">
+                      <span class="material-symbols-outlined">chart_data</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-background-subtle">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+              <h2 class="text-3xl font-bold tracking-tight text-text-main sm:text-4xl">Everything you need</h2>
+              <p class="mt-4 text-lg text-text-muted max-w-2xl">
+                Optimize every step of the customer journey with powerful built-in features.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">rocket_launch</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">One-Click Setup</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    No coding required. Activate the plugin and instantly replace your default WooCommerce checkout.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">smartphone</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">Mobile Optimized</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    Fully responsive design ensures a seamless checkout experience on iOS and Android devices.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">bar_chart</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">Analytics Dashboard</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    Track abandonment rates, revenue recovery, and checkout speed directly from WP Admin.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">palette</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">Visual Editor</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    Customize colors, fonts, and field layouts to match your brand identity perfectly.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">bolt</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">Address Autocomplete</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    Reduce typing errors and speed up the process with Google Maps address suggestions.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-blue-500/5"
+              >
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined">lock</span>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-text-main">Secure &amp; Compliant</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted">
+                    GDPR compliant and supports all major payment gateways securely.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-white">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div class="max-w-2xl">
+                <h2 class="text-3xl font-bold tracking-tight text-text-main sm:text-4xl">See it in action</h2>
+                <p class="mt-4 text-lg text-text-muted">Take a tour of the settings and customer view.</p>
+              </div>
+              <div class="flex gap-2">
+                <button
+                  class="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 text-text-main transition-colors"
+                >
+                  <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button
+                  class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md hover:scale-105 transition-transform hover:bg-primary-hover"
+                >
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+            <div
+              class="flex gap-6 overflow-x-auto pb-8 snap-x [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
+            >
+              <div class="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] snap-center">
+                <div class="flex flex-col gap-4 rounded-2xl bg-white p-4 border border-slate-200 shadow-sm">
+                  <div
+                    class="w-full aspect-video bg-cover bg-center rounded-xl"
+                    data-alt="Screenshot of the single page checkout form layout on a desktop screen"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhIlR_jOeKJzmV04nASiWXV84j00XLf1b2iUtlwzlDl1Ep_rjEC9xkFT4ZpDp6MQDsJhinAdbOAziK8xIIMvVSwR-RjQvMlW8RtQ_CpusU0QZXhOOcPIuyOfyyWHplGZJTcsqdxzxkebPpFHryHvBY1BHlCfbzguNqr8tBXMSnkb8WUnHprYBEHL3abKjCTa0BYRtxAFFdrTrkt_ekVS17Y9yt9Gu9eA9QX8zWO7_KB6UfaLVdSi5_PX0UQDJC8R37yg0bKhX1MUA');
+                    "
+                  ></div>
+                  <div class="px-2">
+                    <h3 class="text-lg font-bold text-text-main">Modern Checkout Layout</h3>
+                    <p class="text-sm text-text-muted">A clean, distract-free design.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] snap-center">
+                <div class="flex flex-col gap-4 rounded-2xl bg-white p-4 border border-slate-200 shadow-sm">
+                  <div
+                    class="w-full aspect-video bg-cover bg-center rounded-xl"
+                    data-alt="Three mobile phones displaying the responsive checkout interface"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLVLsam1StXD844mehHj2UOrWwl1EWFNXvHf0oEa8CN-rlZeiLxsz9tNgbQ0pdTCzmsnMN_2uhZbqhCyoSi5GCRqFrhIsrx0IFzkVb2DI-fBuI6EU3ubqXGnZksJY3ZfvqerpVCJaTo4qmYAbNvDret4pn-XEd5-zQ-E92yH2aJ84MFUaA1xthCw4wn33uGaaPoTNp2wEsdgZl5nT4HfzRlW5mEaqz9BMNFAlGD5MhGZJl-rRjlUSMhIeedi4x13C0X3X_7sMWMS8');
+                    "
+                  ></div>
+                  <div class="px-2">
+                    <h3 class="text-lg font-bold text-text-main">Mobile Responsiveness</h3>
+                    <p class="text-sm text-text-muted">Optimized for thumb-scrolling and easy input.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[85vw] md:min-w-[600px] lg:min-w-[800px] snap-center">
+                <div class="flex flex-col gap-4 rounded-2xl bg-white p-4 border border-slate-200 shadow-sm">
+                  <div
+                    class="w-full aspect-video bg-cover bg-center rounded-xl"
+                    data-alt="The plugin settings panel showing toggle switches for various features"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSVChsH_7isfTbp8Zz5j4_IsTOd0Q2JaX-qtiuYsi5HFwp8u0d2gcwIlCWyJ9SNFQj_7zmc7EoDuroOkrISTUVo5ejRMSywW6TcyYNkpqAT3MJqJd6cHZdoixeNkYqEP7r_CUpWS19p35Quk3Vc3ulNEa-y6FjVg2DWjhHgpKrLd06PY-z3Uuc4lU3NcRGoFf6hScb83CsN37RLpdlXyaQBKRpTDpVvcfOpDlofgYWH1ueCwyH_TM8ue_gl0Qpq4NQBUEGcWziFy8');
+                    "
+                  ></div>
+                  <div class="px-2">
+                    <h3 class="text-lg font-bold text-text-main">Easy Configuration</h3>
+                    <p class="text-sm text-text-muted">Toggle features on and off with a single click.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-background-subtle">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-3">
+              <div class="lg:col-span-1 flex flex-col gap-8">
+                <div>
+                  <h3 class="text-xl font-bold text-text-main mb-4">Plugin Details</h3>
+                  <div class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                      <span class="text-sm text-text-muted">Version</span>
+                      <span class="text-sm font-medium text-text-main">2.4.1</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                      <span class="text-sm text-text-muted">Last Updated</span>
+                      <span class="text-sm font-medium text-text-main">October 24, 2023</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100">
+                      <span class="text-sm text-text-muted">WordPress</span>
+                      <span class="text-sm font-medium text-text-main">6.0 or higher</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm text-text-muted">PHP Version</span>
+                      <span class="text-sm font-medium text-text-main">7.4 or higher</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-blue-50 border border-blue-100 p-6">
+                  <h4 class="font-bold text-text-main mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">support_agent</span>
+                    Need help?
+                  </h4>
+                  <p class="text-sm text-text-muted mb-4">
+                    Our support team is available 24/7 to help you with installation.
+                  </p>
+                  <a class="text-sm font-bold text-primary hover:text-primary-hover hover:underline" href="#"
+                    >Contact Support</a
+                  >
+                </div>
+              </div>
+              <div class="lg:col-span-2">
+                <div
+                  class="relative overflow-hidden rounded-3xl border border-primary bg-white p-8 sm:p-12 shadow-2xl shadow-blue-900/10"
+                >
+                  <div
+                    class="absolute top-0 right-0 rounded-bl-2xl bg-accent px-4 py-2 text-xs font-black uppercase text-blue-900"
+                  >
+                    Best Value
+                  </div>
+                  <div class="flex flex-col lg:flex-row gap-8 lg:items-center justify-between">
+                    <div class="flex-1">
+                      <h3 class="text-2xl font-bold text-text-main">Single Site License</h3>
+                      <p class="mt-2 text-text-muted">Get full access to all features for one domain.</p>
+                      <ul class="mt-6 space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-text-muted">
+                          <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+                            ><span class="material-symbols-outlined text-[16px]">check</span></span
+                          >
+                          1 Year of Updates &amp; Support
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-text-muted">
+                          <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+                            ><span class="material-symbols-outlined text-[16px]">check</span></span
+                          >
+                          30-Day Money Back Guarantee
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-text-muted">
+                          <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600"
+                            ><span class="material-symbols-outlined text-[16px]">check</span></span
+                          >
+                          Access to all future features
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="flex flex-col items-center gap-4 min-w-[200px] border-t lg:border-t-0 lg:border-l border-slate-100 pt-6 lg:pt-0 lg:pl-8"
+                    >
+                      <div class="text-center">
+                        <span class="block text-4xl font-bold text-text-main">$49</span>
+                        <span class="block text-sm text-text-muted">/ year</span>
+                      </div>
+                      <button
+                        class="w-full rounded-full bg-primary py-3 px-6 text-center font-bold text-white transition-transform hover:scale-105 shadow-md shadow-blue-600/20 hover:bg-primary-hover"
+                      >
+                        Purchase Now
+                      </button>
+                      <p class="text-xs text-center text-text-muted">Secure payment via Stripe</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="border-t border-slate-200 bg-white py-12">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+              <div class="flex h-8 w-8 items-center justify-center overflow-hidden rounded-md">
+                <img
+                  alt="AstroPlugins Logo"
+                  class="h-full w-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxkvuDoi1GaM_SG7UmSwwgwqb-xAIk0pue1TAujLOvFDPN8YBC0RNyzsegTKOOCkWk572p362IebFUf6sU_NSWCXsXBZt1PCVEX7AdF8i4_NggDy7NhEOLZT76WcmZqmCy_BVm2hzgw1yGY_Y6ZSgy8tdNbKthEqtflzqjdrcYSYb1kdTONlCaHcmGATvL8B19meLlOdWnjvaNf4GSHu8WU8qiKrxVUoe1px9GGK1DJdJo_xOICV_d6-Val1NGM5Kn29z8YlU7bM"
+                />
+              </div>
+              <span class="text-sm font-bold text-text-main">AstroPlugins</span>
+            </div>
+            <div class="flex gap-6 text-sm text-text-muted">
+              <a class="hover:text-primary" href="#">Privacy Policy</a>
+              <a class="hover:text-primary" href="#">Terms of Service</a>
+              <a class="hover:text-primary" href="#">Refund Policy</a>
+            </div>
+            <div class="text-sm text-text-muted">© 2023 AstroPlugins. All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
