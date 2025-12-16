@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+
+const appStoreImg = '~/assets/images/app-store.png';
+const appStoreDownloadLink =
+  'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584';
+
+const googlePlayImg = '~/assets/images/google-play.png';
+const googlePlayDownloadLink = 'https://github.com/arthelokyo/astrowind';
+
+const metadata = {
+  title: 'Mobile App Homepage',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="WooCommerce Plugin"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Buy',
+        href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&h=1024&q=80',
+      alt: 'WooCommerce Redirect To Page or URL on Add To Cart - Direct Checkout or Skip Cart',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">WooCommerce Redirect To Page or URL on Add To Cart</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Redirect customers on Add To Cart with precision — set global or product-level rules, customize button labels, and
+      create a seamless checkout flow.
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget ************** -->
+
+  <Features2
+    id="features"
+    title="Features"
+    columns={3}
+    items={[
+      {
+        title: 'Direct Redirection',
+        description: 'Enable instant redirection when users click the Add-to-Cart button.',
+        icon: 'tabler:arrow-right',
+      },
+      {
+        title: 'Redirect Anywhere',
+        description: 'Send customers to any page on your site or an external URL.',
+        icon: 'tabler:link',
+      },
+      {
+        title: 'Skip Cart Step',
+        description: 'Streamline checkout by bypassing the cart page, perfect for external product flows.',
+        icon: 'tabler:shopping-cart-off',
+      },
+      {
+        title: 'Custom Button Labels',
+        description: 'Personalize the Add-to-Cart button text to match your brand or campaign.',
+        icon: 'tabler:edit',
+      },
+      {
+        title: 'Clean User Experience',
+        description: "Hide the 'product added' message when redirecting to checkout or other pages.",
+        icon: 'tabler:eye-off',
+      },
+      {
+        title: 'Flexible Settings',
+        description: 'Apply global rules or configure redirection individually at the product level.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Product-Level Overrides',
+        description: 'Override global settings for specific products to create tailored checkout flows.',
+        icon: 'tabler:switch-horizontal',
+      },
+      {
+        title: 'WooCommerce Compatibility',
+        description: 'Works seamlessly with AJAX add-to-cart and default WooCommerce redirect settings.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Broad Integration',
+        description: 'Compatible with WooCommerce Blocks, Block Themes, Dokan marketplace, and WordPress Multisite.',
+        icon: 'tabler:layers-union',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- faqs Widget **************** -->
+
+  <FAQs
+    title="Use cases"
+    columns={1}
+    items={[
+      {
+        title: 'Reduce Abandoned Carts',
+        description:
+          'Default WooCommerce checkout requires multiple steps (shop → cart → checkout). Redirecting users directly to checkout after adding a product minimizes friction and reduces cart abandonment.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Custom Pre‑Checkout Pages',
+        description:
+          'Redirect customers to a purpose-built page where they can fill out forms or read terms & conditions before or after adding a product to the cart.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'External Checkout & Affiliate Sales',
+        description:
+          'Send users to another store or an external checkout service. Ideal for multi‑store owners or affiliates who want to earn commissions on grouped or variable products.',
+        icon: 'tabler:external-link',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What if settings of a Grouped product are different from the settings of its child product(s)?',
+        description: 'Grouped product settings will be used.',
+      },
+      {
+        title: 'Does settings of a Variable product apply to all of its variation?',
+        description: 'Yes',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="download"
+    title="Buy plugin now!"
+    subtitle="Boost conversions instantly with WooCommerce Redirect on Add to Cart – send shoppers straight to checkout or any page you choose."
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Buy',
+        href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
+      },
+    ]}
+  />
+</Layout>

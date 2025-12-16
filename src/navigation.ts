@@ -3,6 +3,15 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
+      text: 'Plugins',
+      links: [
+        {
+          text: 'Redirect on Add To Cart',
+          href: getPermalink('/plugins/redirect-on-add-to-cart-for-woocommerce'),
+        },
+      ],
+    },
+    {
       text: 'Homes',
       links: [
         {
