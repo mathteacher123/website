@@ -26,7 +26,7 @@ const metadata = {
   title: 'Mobile App Homepage',
 };
 
-import {YouTube} from 'astro-lazy-youtube-embed';
+import { YouTube } from 'astro-lazy-youtube-embed';
 import { Icon } from 'astro-icon/components';
 ---
 
@@ -42,57 +42,56 @@ import { Icon } from 'astro-icon/components';
         text: 'Get Pro Version',
         href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
       },
-       {
+      {
         target: '_blank',
         text: 'Try Live Demo',
         href: 'http://cartplus.42web.io/',
       },
-       {
+      {
         target: '_blank',
         text: 'Get Lite Version',
         href: 'https://wordpress.org/plugins/redirect-on-add-to-cart-for-woocommerce/',
-      }, 
+      },
     ]}
   >
-  <Fragment slot="title">
-    <span class="text-accent dark:text-white">WooCommerce Redirect on Add To Cart</span>
-   </Fragment>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">WooCommerce Redirect on Add To Cart</span>
+    </Fragment>
 
-   <Fragment slot="subtitle">
-      Redirect customers to a page or URL on Add To Cart with precision — set global or product-level rules, customize button labels, and
-      create a seamless checkout flow.
+    <Fragment slot="subtitle">
+      Redirect customers to a page or URL on Add To Cart with precision — set global or product-level rules, customize
+      button labels, and create a seamless checkout flow.
     </Fragment>
     <Fragment slot="content">
-     <p class="mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-center lg:justify-start gap-6">
-  <span class="flex items-center gap-2">
-    <Icon name="tabler:credit-card" class="h-4 w-4 text-gray-500" />
-    One-time payment
-  </span>
+      <p class="mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-center lg:justify-start gap-6">
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:credit-card" class="h-4 w-4 text-gray-500" />
+          One-time payment
+        </span>
 
-  <span class="flex items-center gap-2">
-    <Icon name="tabler:repeat-off" class="h-4 w-4 text-gray-500" />
-    No subscription
-  </span>
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:repeat-off" class="h-4 w-4 text-gray-500" />
+          No subscription
+        </span>
 
-  <span class="flex items-center gap-2">
-    <Icon name="tabler:infinity" class="h-4 w-4 text-gray-500" />
-    Lifetime updates
-  </span>
-</p>
-
-
-
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:infinity" class="h-4 w-4 text-gray-500" />
+          Lifetime updates
+        </span>
+      </p>
     </Fragment>
-
 
     <Fragment slot="image">
       <div class="flex-1 w-full">
         <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
-          <YouTube videoId="--aM4G5NMqM" thumbnailRes="hq" title="WooCommerce Redirect To Page or URL on Add To Cart - Direct Checkout or Skip Cart" />
+          <YouTube
+            videoId="--aM4G5NMqM"
+            thumbnailRes="hq"
+            title="WooCommerce Redirect To Page or URL on Add To Cart - Direct Checkout or Skip Cart"
+          />
         </div>
       </div>
     </Fragment>
-
   </Hero2>
 
   <!-- Features Widget ************** -->
