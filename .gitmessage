@@ -1,0 +1,69 @@
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+#
+# Commit Message Format Guide
+# -----------------------
+# Format: <type>(<scope>): <subject>
+#
+# Type: Should be one of the following:
+#   feat:     A new feature
+#   fix:      A bug fix
+#   docs:     Documentation only changes
+#   style:    Changes that do not affect the meaning of the code
+#   refactor:  A code change that neither fixes a bug nor adds a feature
+#   perf:     A code change that improves performance
+#   test:     Adding missing tests or correcting existing tests
+#   build:    Changes that affect the build system or external dependencies
+#   ci:       Changes to CI configuration files and scripts
+#   chore:    Other changes that don't modify src or test files
+#
+# Scope: Should be one of the following:
+#   Primary Scopes:
+#     components/ui      - Basic UI components (Button, Form, Timeline, etc.)
+#     components/widgets  - Page sections (Hero, Features, Footer, etc.)
+#     components/blog     - Blog functionality (Grid, List, Pagination, etc.)
+#     components/common   - Shared components (Analytics, Meta, Theme, etc.)
+#     pages              - General page creation and modification
+#     pages/blog         - Blog routing and pages
+#     pages/homes        - Homepage variants (SaaS, Startup, Mobile App, etc.)
+#     pages/landing      - Landing page types (Lead Gen, Sales, Product, etc.)
+#     pages/plugins      - Plugin-specific landing pages
+#     layouts            - Layout components
+#     utils              - Utility functions and helpers
+#     config             - Site configuration changes
+#     assets             - Static assets management
+#
+#   Specialized Scopes:
+#     blog               - Blog-related changes (encompasses all blog functionality)
+#     seo                - SEO and metadata changes
+#     build              - Build and deployment configuration
+#     deps               - Dependencies (package.json changes)
+#     astro              - Astro configuration
+#     tailwind           - Tailwind CSS configuration
+#     docker             - Docker configuration
+#     docs               - Documentation changes
+#
+# Subject: Use imperative, present tense: "change" not "changed" or "changes"
+#   - Lower case subject line
+#   - No period at end
+#   - Keep under 100 characters
+#
+# Body: Motivation for the change and contrast this with previous behavior
+#   - Wrap at 72 characters
+#   - Use imperative, present tense: "change" not "changed" or "changes"
+#   - Reference issues and pull requests liberally after the first line
+#
+# Footer: Any Breaking Changes and Issues References
+#   - Breaking changes: Start with BREAKING CHANGE: followed by space or newline
+#   - Issues: Closes #123 or Fixes #456
+#
+# Examples:
+#   feat(components/ui): add new button variant with loading state
+#   fix(pages): resolve 404 error on contact page routing
+#   feat(pages/plugins): add WooCommerce plugin landing page
+#   config(seo): update meta descriptions for better search ranking
+#   build(astro): upgrade to v5.12.0 with new integrations
+#

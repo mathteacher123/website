@@ -1,0 +1,103 @@
+{
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "type-enum": [2, "always", ["feat", "fix", "docs", "style", "refactor", "perf", "test", "build", "ci", "chore"]],
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "components/ui",
+        "components/widgets",
+        "components/blog",
+        "components/common",
+        "pages",
+        "pages/blog",
+        "pages/homes",
+        "pages/landing",
+        "pages/plugins",
+        "layouts",
+        "utils",
+        "config",
+        "assets",
+        "blog",
+        "seo",
+        "build",
+        "deps",
+        "astro",
+        "tailwind",
+        "docker",
+        "docs"
+      ]
+    ],
+    "scope-empty": [0],
+    "subject-case": [2, "never", ["start-case", "pascal-case", "upper-case"]],
+    "subject-empty": [2, "never"],
+    "subject-full-stop": [2, "never", "."],
+    "header-max-length": [2, "always", 100],
+    "body-leading-blank": [1, "always"],
+    "body-max-line-length": [2, "always", 72],
+    "footer-leading-blank": [1, "always"],
+    "footer-max-line-length": [2, "always", 72]
+  },
+  "prompt": {
+    "questions": {
+      "type": {
+        "description": "Select the type of change that you're committing",
+        "enum": [
+          {
+            "value": "feat",
+            "description": "A new feature"
+          },
+          {
+            "value": "fix",
+            "description": "A bug fix"
+          },
+          {
+            "value": "docs",
+            "description": "Documentation only changes"
+          },
+          {
+            "value": "style",
+            "description": "Changes that do not affect the meaning of the code"
+          },
+          {
+            "value": "refactor",
+            "description": "A code change that neither fixes a bug nor adds a feature"
+          },
+          {
+            "value": "perf",
+            "description": "A code change that improves performance"
+          },
+          {
+            "value": "test",
+            "description": "Adding missing tests or correcting existing tests"
+          },
+          {
+            "value": "build",
+            "description": "Changes that affect the build system or external dependencies"
+          },
+          {
+            "value": "ci",
+            "description": "Changes to our CI configuration files and scripts"
+          },
+          {
+            "value": "chore",
+            "description": "Other changes that don't modify src or test files"
+          }
+        ]
+      },
+      "scope": {
+        "description": "What is the scope of this change?"
+      },
+      "subject": {
+        "description": "Write a short, imperative tense description of the change"
+      },
+      "body": {
+        "description": "Provide a longer description of the change"
+      },
+      "footer": {
+        "description": "List any breaking changes or issues closed by this change"
+      }
+    }
+  }
+}

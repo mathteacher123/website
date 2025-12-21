@@ -9,6 +9,22 @@ on:
       - main
 
 jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate commit messages
+        run: npx commitlint --from=origin/main --to=${{ github.sha }}
+
   build:
     runs-on: ubuntu-latest
     strategy:
