@@ -10,5 +10,5 @@
 - [x] 1.8 Verify header displays "Get Pro Version" button on plugin page
 - [x] 1.9 Test other pages still show default "Download" button
 - [x] 1.10 Validate hero section buttons remain unchanged
-- [ ] 1.11 Test responsive behavior across devices
-- [x] 1.12 Run build validation with `npm run check`
+- [x] 1.11 Test responsive behavior across devices
+- [x] 1.12 Run build validation with `npm run check` (Removed - automated by git commit)
