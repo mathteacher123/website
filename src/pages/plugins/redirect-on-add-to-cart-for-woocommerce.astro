@@ -5,6 +5,7 @@ import Header from '~/components/widgets/Header.astro';
 
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { CallToAction as CallToActionType } from '~/types';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -22,6 +23,16 @@ const appStoreDownloadLink =
 const googlePlayImg = '~/assets/images/google-play.png';
 const googlePlayDownloadLink = 'https://github.com/arthelokyo/astrowind';
 
+// Extract header actions from hero section  
+const headerActions: CallToActionType[] = [
+  {
+    variant: 'primary',
+    target: '_blank',
+    text: 'Get Pro Version',
+    href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
+  },
+];
+
 const metadata = {
   title: 'Mobile App Homepage',
 };
@@ -30,7 +41,7 @@ import { YouTube } from 'astro-lazy-youtube-embed';
 import { Icon } from 'astro-icon/components';
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} actions={headerActions}>
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
