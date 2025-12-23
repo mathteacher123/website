@@ -1,29 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import type { CallToAction as CallToActionType } from '~/types';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features.astro';
-import Content from '~/components/widgets/Content.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 
-import Button from '~/components/ui/Button.astro';
-import Image from '~/components/common/Image.astro';
-
-const appStoreImg = '~/assets/images/app-store.png';
-const appStoreDownloadLink =
-  'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584';
-
-const googlePlayImg = '~/assets/images/google-play.png';
-const googlePlayDownloadLink = 'https://github.com/arthelokyo/astrowind';
-
-// Extract header actions from hero section  
+// Extract header actions from hero section
 const headerActions: CallToActionType[] = [
   {
     variant: 'primary',

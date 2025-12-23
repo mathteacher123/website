@@ -1,8 +1,11 @@
 # header-action-override Specification
 
 ## Purpose
+
 TBD - created by archiving change replace-header-download-button. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: PageLayout Actions Support
 
 PageLayout component SHALL accept optional `actions` parameter to allow page-specific header button overrides.
@@ -55,4 +58,3 @@ PageLayout component Props interface SHALL be extended to include optional `acti
 - **THEN** Pages SHALL render correctly with default header behavior
 - **AND** No TypeScript errors SHALL occur for missing prop
 - **AND** Backward compatibility SHALL be maintained
-
