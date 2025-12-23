@@ -13,5 +13,5 @@ The current header displays a generic "Download" button linking to AstroWind Git
 
 ## Impact
 
-- Affected specs: None (leveraging existing Header actions capability)
+- Affected specs: header-action-override
 - Affected code: `src/layouts/PageLayout.astro`, `src/pages/plugins/redirect-on-add-to-cart-for-woocommerce.astro`
