@@ -23,6 +23,7 @@ const metadata = {
 
 import { YouTube } from 'astro-lazy-youtube-embed';
 import { Icon } from 'astro-icon/components';
+import Lightbox from "~/components/ui/Lightbox.astro";
 ---
 
 <Layout metadata={metadata} actions={headerActions}>
@@ -86,9 +87,10 @@ import { Icon } from 'astro-icon/components';
           />
         </div>
       </div>
+      <Lightbox slug="redirect"/>
     </Fragment>
   </Hero2>
-
+   
   <!-- Features Widget ************** -->
 
   <Features2

@@ -1,0 +1,54 @@
+---
+  import Button from '~/components/ui/Button.astro';
+  import { getImagesFromFolder } from "~/utils/screenshots.js";
+
+  const { slug = '', buttonText ="View Screenshots"  } = Astro.props;
+  const images = getImagesFromFolder(`screenshots/${slug}`);
+---
+
+<div class="lightbox mt-4 flex justify-center" data-images={JSON.stringify(images)}>
+  {images.length ? <Button text={buttonText} class="lightbox__trigger"/> : 'No images' }
+</div>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js" integrity="sha512-03Ucfdj4I8Afv+9P/c9zkF4sBBGlf68zzr/MV+ClrqVCBXWAsTEjIoGCMqxhUxv1DGivK7Bm1IQd8iC4v7X2bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  const lightboxes = document.querySelectorAll(".lightbox");
+
+  lightboxes.forEach(div => {
+    // 1. Safely parse dataset JSON
+    let images = [];
+    try {
+      if (div.dataset.images) {
+        images = JSON.parse(div.dataset.images);
+      }
+    } catch (e) {
+      console.error("Invalid JSON in data-images:", e);
+      return; // skip this lightbox if parsing fails
+    }
+
+    // 2. Ensure trigger exists
+    const trigger = div.querySelector(".lightbox__trigger");
+    if (!trigger) {
+      console.warn("No .lightbox__trigger found in:", div);
+      return;
+    }
+
+    trigger.addEventListener("click", () => {
+      // 3. Ensure FsLightbox is available
+      if (typeof FsLightbox === "undefined") {
+        console.error("FsLightbox is not defined. Did you import the library?");
+        return;
+      }
+
+      const lightbox = new FsLightbox();
+
+      // 4. Only set sources if images exist
+      if (images.length > 0) {
+        lightbox.props.sources = images;
+        lightbox.setup();
+        lightbox.open(); // open first image
+      } else {
+        console.warn("No images found for this lightbox.");
+      }
+    });
+  });
+</script>
