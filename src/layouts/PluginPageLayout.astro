@@ -1,0 +1,127 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { CallToAction as CallToActionType } from '~/types';
+import Features2 from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const {
+    hero:{pro, demo, lite, title, subtitle, youtube, slug},
+    features,
+    useCases,
+    faqs,
+} = Astro.props;
+
+// Extract header actions from hero section
+const headerActions: CallToActionType[] = [
+  {
+    variant: 'primary',
+    target: '_blank',
+    text: 'Get Pro Version',
+    href: pro.url,
+  },
+];
+
+const metadata = {
+  title,
+};
+
+import { YouTube } from 'astro-lazy-youtube-embed';
+import { Icon } from 'astro-icon/components';
+import Lightbox from "~/components/ui/Lightbox.astro";
+---
+
+<Layout metadata={metadata} actions={headerActions}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="WooCommerce Plugin"
+    actions={[
+      ...[{
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get Pro Version',
+        href: pro.url,
+      },
+      {
+        target: '_blank',
+        text: 'Try Live Demo',
+        href: demo.url,
+      }],
+      ...(lite ? [{
+        target: '_blank',
+        text: 'Get Lite Version',
+        href: lite.url,
+      }]:[]),
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">{title}</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      {subtitle}
+    </Fragment>
+    <Fragment slot="content">
+      <p class="mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-center lg:justify-start gap-6">
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:credit-card" class="h-4 w-4 text-gray-500" />
+          One-time payment
+        </span>
+
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:repeat-off" class="h-4 w-4 text-gray-500" />
+          No subscription
+        </span>
+
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:infinity" class="h-4 w-4 text-gray-500" />
+          Lifetime updates
+        </span>
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+      {youtube && <div class="flex-1 w-full">
+        <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
+          <YouTube
+            videoId={youtube.id}
+            thumbnailRes="hq"
+            title={youtube.title}
+          />
+        </div>
+      </div>
+      }
+      <Lightbox slug={slug}/>
+    </Fragment>
+    
+  </Hero2>
+   
+  <!-- Features Widget ************** -->
+
+  <Features2
+    id="features"
+    title="Features"
+    columns={3}
+    items={features.items}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- faqs Widget **************** -->
+
+  <FAQs
+    title="Use cases"
+    columns={1}
+    items={useCases.items}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    classes={{ container: 'max-w-6xl' }}
+    items={faqs.items}
+  />
+</Layout>

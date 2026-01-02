@@ -1,103 +1,22 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-
-import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import type { CallToAction as CallToActionType } from '~/types';
-import Features2 from '~/components/widgets/Features.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-
-// Extract header actions from hero section
-const headerActions: CallToActionType[] = [
-  {
-    variant: 'primary',
-    target: '_blank',
-    text: 'Get Pro Version',
-    href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
-  },
-];
-
-const metadata = {
-  title: 'Mobile App Homepage',
-};
-
-import { YouTube } from 'astro-lazy-youtube-embed';
-import { Icon } from 'astro-icon/components';
-import Lightbox from "~/components/ui/Lightbox.astro";
+import Layout from '~/layouts/PluginPageLayout.astro';
 ---
 
-<Layout metadata={metadata} actions={headerActions}>
-  <!-- Hero2 Widget ******************* -->
-
-  <Hero2
-    tagline="WooCommerce Plugin"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Get Pro Version',
-        href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
-      },
-      {
-        target: '_blank',
-        text: 'Try Live Demo',
-        href: 'http://cartplus.42web.io/',
-      },
-      {
-        target: '_blank',
-        text: 'Get Lite Version',
-        href: 'https://wordpress.org/plugins/redirect-on-add-to-cart-for-woocommerce/',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      <span class="text-accent dark:text-white">WooCommerce Redirect on Add To Cart</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Redirect customers to a page or URL on Add To Cart with precision — set global or product-level rules, customize
-      button labels, and create a seamless checkout flow.
-    </Fragment>
-    <Fragment slot="content">
-      <p class="mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-center lg:justify-start gap-6">
-        <span class="flex items-center gap-2">
-          <Icon name="tabler:credit-card" class="h-4 w-4 text-gray-500" />
-          One-time payment
-        </span>
-
-        <span class="flex items-center gap-2">
-          <Icon name="tabler:repeat-off" class="h-4 w-4 text-gray-500" />
-          No subscription
-        </span>
-
-        <span class="flex items-center gap-2">
-          <Icon name="tabler:infinity" class="h-4 w-4 text-gray-500" />
-          Lifetime updates
-        </span>
-      </p>
-    </Fragment>
-
-    <Fragment slot="image">
-      <div class="flex-1 w-full">
-        <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
-          <YouTube
-            videoId="--aM4G5NMqM"
-            thumbnailRes="hq"
-            title="WooCommerce Redirect To Page or URL on Add To Cart - Direct Checkout or Skip Cart"
-          />
-        </div>
-      </div>
-      <Lightbox slug="redirect"/>
-    </Fragment>
-  </Hero2>
-   
-  <!-- Features Widget ************** -->
-
-  <Features2
-    id="features"
-    title="Features"
-    columns={3}
-    items={[
+<Layout 
+  hero={{
+    pro:{url:'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584'},
+    demo:{url:'http://cartplus.42web.io/'},
+    lite:{url:'https://wordpress.org/plugins/redirect-on-add-to-cart-for-woocommerce/'},
+    title:'WooCommerce Redirect on Add To Cart',
+    subtitle:'Redirect customers to a page or URL on Add To Cart with precision — set global or product-level rules, customize button labels, and create a seamless checkout flow.',
+    youtube:{
+      id:"--aM4G5NMqM",
+      title:"WooCommerce Redirect To Page or URL on Add To Cart - Direct Checkout or Skip Cart"
+    },
+    slug:'redirect',
+  }}
+  features={{
+    items:[
       {
         title: 'Direct Redirection',
         description: 'Enable instant redirection when users click the Add-to-Cart button.',
@@ -143,19 +62,10 @@ import Lightbox from "~/components/ui/Lightbox.astro";
         description: 'Compatible with WooCommerce Blocks, Block Themes, Dokan marketplace, and WordPress Multisite.',
         icon: 'tabler:layers-union',
       },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- faqs Widget **************** -->
-
-  <FAQs
-    title="Use cases"
-    columns={1}
-    items={[
+    ]
+  }}
+  useCases={{
+    items:[
       {
         title: 'Reduce Abandoned Carts',
         description:
@@ -174,13 +84,10 @@ import Lightbox from "~/components/ui/Lightbox.astro";
           'Send users to another store or an external checkout service. Ideal for multi‑store owners or affiliates who want to earn commissions on grouped or variable products.',
         icon: 'tabler:external-link',
       },
-    ]}
-  />
-
-  <FAQs
-    title="Frequently Asked Questions"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
+    ]
+  }}
+  faqs={{
+    items:[
       {
         title: 'What if settings of a Grouped product are different from the settings of its child product(s)?',
         description: 'Grouped product settings will be used.',
@@ -189,22 +96,7 @@ import Lightbox from "~/components/ui/Lightbox.astro";
         title: 'Does settings of a Variable product apply to all of its variation?',
         description: 'Yes',
       },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    id="download"
-    title="Buy plugin now!"
-    subtitle="Boost conversions instantly with WooCommerce Redirect on Add to Cart – send shoppers straight to checkout or any page you choose."
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Buy',
-        href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
-      },
-    ]}
-  />
+    ]
+  }}
+  >
 </Layout>
