@@ -18,6 +18,9 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
+  formMethod,
+  formAction,
+  formId="contact"
 } = Astro.props;
 ---
 
@@ -33,6 +36,9 @@ const {
           disclaimer={disclaimer}
           button={button}
           description={description}
+          formMethod={formMethod},
+          formAction={formAction}
+          formId={formId}
         />
       </div>
     )
