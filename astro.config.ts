@@ -29,7 +29,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap(),
-    mdx(),
+    //mdx(),
     icon({
       include: {
         tabler: ['*'],

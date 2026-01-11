@@ -11,14 +11,28 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import {getPermalink} from '~/utils/permalinks.js'
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'wpxqw — WooCommerce plugins',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
+ <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Read more',
+        href: getPermalink('plugins/redirect-on-add-to-cart-for-woocommerce'),
+      },
+    ]}
+    title="WooCommerce Redirect on Add To Cart"
+    subtitle="Boost conversions instantly with WooCommerce Redirect on Add to Cart – send shoppers straight to checkout or any page you choose."
+  />
+
+{/*
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -396,4 +410,5 @@ const metadata = {
       waste more time! :P
     </Fragment>
   </CallToAction>
+*/}
 </Layout>

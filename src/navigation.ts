@@ -12,6 +12,11 @@ export const headerData = {
       ],
     },
     {
+      text: 'Contact us',
+      href: getPermalink('/contact'),
+    },
+    /*
+    {
       text: 'Homes',
       links: [
         {
@@ -123,12 +128,32 @@ export const headerData = {
       text: 'Widgets',
       href: '#',
     },
+    */
   ],
   actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
+    {
+      title: 'Plugins',
+      links: [
+        {
+          text: 'Redirect on Add To Cart',
+          href: getPermalink('/plugins/redirect-on-add-to-cart-for-woocommerce'),
+        },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
+        {
+          text: 'Contact us',
+          href: getPermalink('/contact'),
+        },
+      ],
+    },
+    /*
     {
       title: 'Product',
       links: [
@@ -173,7 +198,9 @@ export const footerData = {
         { text: 'Shop', href: '#' },
       ],
     },
+    */
   ],
+  /*
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
@@ -188,4 +215,5 @@ export const footerData = {
   footNote: `
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
   `,
+  */
 };
