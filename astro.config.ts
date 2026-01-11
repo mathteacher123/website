@@ -28,7 +28,17 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        // Only include specific routes
+        const url = new URL(page);
+        return [
+          "/",
+          "/plugins/redirect-on-add-to-cart-for-woocommerce",
+          "/contact",
+        ].includes(url.pathname);
+      },
+    }),
     //mdx(),
     icon({
       include: {
