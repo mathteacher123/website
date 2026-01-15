@@ -10,7 +10,7 @@ export const headerData = {
           href: getPermalink('/plugins/redirect-on-add-to-cart-for-woocommerce'),
         },
         {
-          text: 'WooCommerce Fee For Cart & Checkout',
+          text: 'Fee For Cart & Checkout',
           href: getPermalink('/plugins/woocommerce-fee-for-cart-checkout'),
         },
       ],
