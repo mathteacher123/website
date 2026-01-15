@@ -1,6 +1,6 @@
 - Create new page file `src/pages/plugins/woocommerce-fee-for-cart-checkout.astro` by duplicating `redirect-on-add-to-cart-for-woocommerce.astro`
 - Replace content with generated marketing copy for Hero, Features (12 items), Use Cases (5 items), FAQs (3 items), and CTA sections
-- Update header navigation component to include "WooCommerce Fee For Cart & Checkout" link to `/plugins/woocommerce-fee-for-cart-checkout`
+- Update header navigation component to include "Fee For Cart & Checkout" link to `/plugins/woocommerce-fee-for-cart-checkout`
 - Update footer plugins section to include the new plugin link
 - Run `npm run check:eslint` and `npm run check:astro` to validate code quality
 - Test page rendering and navigation links in development server
