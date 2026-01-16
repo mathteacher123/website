@@ -12,13 +12,13 @@ const headerActions: CallToActionType[] = [
   {
     variant: 'primary',
     target: '_blank',
-    text: 'Get Pro Version',
-    href: 'https://codecanyon.net/item/woocommerce-redirect-to-page-or-url-on-add-to-cart-direct-checkout-or-skip-cart/36215584',
+    text: 'Get Plugin',
+    href: 'https://codecanyon.net/item/woocommerce-fee-for-cart-checkout/58916631',
   },
 ];
 
 const metadata = {
-  title: 'Mobile App Homepage',
+  title: 'WooCommerce Fee For Cart & Checkout',
 };
 
 import { YouTube } from 'astro-lazy-youtube-embed';
@@ -74,14 +74,13 @@ import Lightbox from "~/components/ui/Lightbox.astro";
     <Fragment slot="image">
       <div class="flex-1 w-full">
         <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
-          <YouTube
-            videoId="dummy123"
-            thumbnailRes="hq"
-            title="WooCommerce Fee For Cart & Checkout"
+          <img
+            src='/screenshots/fee/40-settings.png'
+            alt="WooCommerce Fee For Cart & Checkout image"
           />
         </div>
       </div>
-      <Lightbox slug="redirect"/>
+      <Lightbox slug="fee"/>
     </Fragment>
   </Hero2>
     
