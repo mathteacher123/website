@@ -190,8 +190,11 @@ import Lightbox from "~/components/ui/Lightbox.astro";
         description: 'Yes',
       },
     ]}
-  />
-
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
