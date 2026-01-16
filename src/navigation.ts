@@ -9,6 +9,10 @@ export const headerData = {
           text: 'Redirect on Add To Cart',
           href: getPermalink('/plugins/redirect-on-add-to-cart-for-woocommerce'),
         },
+        {
+          text: 'Fee For Cart & Checkout',
+          href: getPermalink('/plugins/woocommerce-fee-for-cart-checkout'),
+        },
       ],
     },
     {
@@ -141,6 +145,10 @@ export const footerData = {
         {
           text: 'Redirect on Add To Cart',
           href: getPermalink('/plugins/redirect-on-add-to-cart-for-woocommerce'),
+        },
+        {
+          text: 'Fee For Cart & Checkout',
+          href: getPermalink('/plugins/woocommerce-fee-for-cart-checkout'),
         },
       ],
     },

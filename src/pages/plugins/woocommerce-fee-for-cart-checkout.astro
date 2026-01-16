@@ -1,0 +1,238 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { CallToAction as CallToActionType } from '~/types';
+import Features2 from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+// Extract header actions from hero section
+const headerActions: CallToActionType[] = [
+  {
+    variant: 'primary',
+    target: '_blank',
+    text: 'Get Plugin',
+    href: 'https://codecanyon.net/item/woocommerce-fee-for-cart-checkout/58916631',
+  },
+];
+
+const metadata = {
+  title: 'WooCommerce Fee For Cart & Checkout',
+};
+
+import { YouTube } from 'astro-lazy-youtube-embed';
+import { Icon } from 'astro-icon/components';
+import Lightbox from "~/components/ui/Lightbox.astro";
+---
+
+<Layout metadata={metadata} actions={headerActions}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="WooCommerce Plugin"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get Plugin',
+        href: 'https://codecanyon.net/item/woocommerce-fee-for-cart-checkout/58916631',
+      },
+      {
+        target: '_blank',
+        text: 'Try Live Demo',
+        href: 'http://wps.zya.me/cart',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">WooCommerce Fee For Cart & Checkout</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Make your store smarter with pinpoint fee control—no code, no clutter, just seamless profitability. Charge handling, packaging, payment gateway costs, or tailor fees to cart items with our powerful rule engine. Boost margins effortlessly!
+    </Fragment>
+    <Fragment slot="content">
+      <p class="mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-center lg:justify-start gap-6">
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:credit-card" class="h-4 w-4 text-gray-500" />
+          One-time payment
+        </span>
+
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:repeat-off" class="h-4 w-4 text-gray-500" />
+          No subscription
+        </span>
+
+        <span class="flex items-center gap-2">
+          <Icon name="tabler:infinity" class="h-4 w-4 text-gray-500" />
+          Lifetime updates
+        </span>
+      </p>
+    </Fragment>
+
+    <Fragment slot="image">
+      <div class="flex-1 w-full">
+        <div class="aspect-video w-full rounded-lg shadow-lg overflow-hidden">
+          <img
+            src='/screenshots/fee/40-settings.png'
+            alt="WooCommerce Fee For Cart & Checkout image"
+          />
+        </div>
+      </div>
+      <Lightbox slug="fee"/>
+    </Fragment>
+  </Hero2>
+    
+  <!-- Features Widget ************** -->
+
+  <Features2
+    id="features"
+    title="Features"
+    columns={3}
+    items={[
+      {
+        title: 'Flexible Fee Structure',
+        description: 'Fixed or percentage, per cart or per item—adapt and profit instantly.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Advanced Rule Engine',
+        description: 'Multiple conditional fees with smart logic—scale revenue effortlessly.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Fixed Fee',
+        description: 'Set amount per cart—ideal for handling charges that boost margins.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Percentage Fee',
+        description: 'Dynamic percentage of subtotal—processing fees that grow with sales.',
+        icon: 'tabler:percentage',
+      },
+      {
+        title: 'Fixed Fee per Cart Item',
+        description: 'Per-product flat fee—packaging costs recovered automatically.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Percentage Fee per Cart Item',
+        description: 'Scalable percentage per item—surpasses for higher profits.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Fixed Fee per Cart Line',
+        description: 'Flat fee per line item—efficient per-type charges.',
+        icon: 'tabler:list',
+      },
+      {
+        title: 'Cart-Wide Compatibility',
+        description: 'Classic shortcode & modern Gutenberg checkout—no issues, just results.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'Streamlined Settings',
+        description: 'Configure in seconds—easy interface for quick setup.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'WordPress Standards',
+        description: 'Crafted perfectly—reliable, no-bloat performance.',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Lightweight & Fast',
+        description: 'No external libraries—speedy, secure scaling.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Intuitive for All',
+        description: 'Non-technical friendly—powerful results without hassle.',
+        icon: 'tabler:user',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- faqs Widget **************** -->
+
+  <FAQs
+    title="Use cases"
+    columns={2}
+    classes={{ container: 'max-w-6xl mx-auto' }}
+    items={[
+      {
+        title: 'Cart-Based Conditions',
+        description: '<ul class="list-disc list-inside text-sm"><li>Apply a $15 fee if cart subtotal exceeds $200.</li><li>Add $1 per item when cart quantity goes over 10.</li><li>Charge $5 if cart has more than 3 line items.</li></ul>',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Checkout-Based Conditions',
+        description: '<ul class="list-disc list-inside text-sm"><li>Include a $10 fee for express shipping method.</li><li>Apply a 2% surcharge when paying via credit card.</li></ul>',
+        icon: 'tabler:credit-card',
+      },
+      {
+        title: 'Customer-Based Conditions',
+        description: '<ul class="list-disc list-inside text-sm"><li>Waive fees for logged-in customers.</li><li>Add a $20 setup fee for wholesale customer role.</li><li>Apply a $5 loyalty fee for specific customer IDs.</li></ul>',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Date & Time Conditions',
+        description: '<ul class="list-disc list-inside text-sm"><li>"Apply a $10 fee for orders placed on December 25th."</li><li>"Add a $2 surcharge for orders placed between 11 PM and 6 AM."</li><li>"Charge $5 for orders placed on Fridays after 8 PM."</li><li>"Apply a $3 discount for orders placed on Wednesdays."</li><li>"Add a $4 fee for orders placed on the 1st of any month."</li><li>"Offer a $5 discount for purchases made in January."</li></ul>',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Product Filtering',
+        description: '<ul class="list-disc list-inside text-sm"><li>Charge $3 per item for products tagged <code>fragile</code>.</li><li>Apply 5% fee only on items in the <code>electronics</code> category.</li></ul>',
+        icon: 'tabler:filter',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Can I apply multiple fees at once?',
+        description: 'Yes! With the built-in rule engine, you can add multiple fee rules and apply them conditionally based on cart contents.',
+      },
+      {
+        title: 'Will this work with the new Gutenberg-based checkout pages?',
+        description: 'Absolutely. The plugin is fully compatible with both shortcode-based and block-based WooCommerce checkouts.',
+      },
+      {
+        title: 'Are the fees taxable?',
+        description: 'The plugin includes an option to make fees taxable, ensuring adaptability to various business requirements.',
+      },
+    ]}
+  >
+   <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+</FAQs>
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="download"
+    title="Get plugin now!"
+    subtitle="Boost conversions instantly with WooCommerce Fee For Cart & Checkout – charge smart fees that recover costs and maximize margins."
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get Plugin',
+        href: 'https://codecanyon.net/item/woocommerce-fee-for-cart-checkout/58916631',
+      },
+      {
+        target: '_blank',
+        text: 'Try Live Demo',
+        href: 'http://wps.zya.me/cart',
+      },
+    ]}
+  />
+</Layout>
