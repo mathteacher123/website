@@ -166,27 +166,27 @@ import Lightbox from "~/components/ui/Lightbox.astro";
     items={[
       {
         title: 'Cart-Based Conditions',
-        description: '$15 fee over $200 subtotal, $1 per item over 10, $5 for >3 line items—maximize profits smartly.',
+        description: '<ul class="list-disc list-inside text-sm"><li>Apply a $15 fee if cart subtotal exceeds $200.</li><li>Add $1 per item when cart quantity goes over 10.</li><li>Charge $5 if cart has more than 3 line items.</li></ul>',
         icon: 'tabler:rocket',
       },
       {
         title: 'Checkout-Based Conditions',
-        description: '$10 for express shipping, 2% on credit cards—tailor to checkout for revenue boost.',
+        description: '<ul class="list-disc list-inside text-sm"><li>Include a $10 fee for express shipping method.</li><li>Apply a 2% surcharge when paying via credit card.</li></ul>',
         icon: 'tabler:credit-card',
       },
       {
         title: 'Customer-Based Conditions',
-        description: 'Waive for logged-in, $20 wholesale setup, $5 loyalty IDs—personalize and charge what matters.',
+        description: '<ul class="list-disc list-inside text-sm"><li>Waive fees for logged-in customers.</li><li>Add a $20 setup fee for wholesale customer role.</li><li>Apply a $5 loyalty fee for specific customer IDs.</li></ul>',
         icon: 'tabler:users',
       },
       {
         title: 'Date & Time Conditions',
-        description: 'Seasonal fees like $10 on holidays, $2 night surcharge—time-based profitability.',
+        description: '<ul class="list-disc list-inside text-sm"><li>"Apply a $10 fee for orders placed on December 25th."</li><li>"Add a $2 surcharge for orders placed between 11 PM and 6 AM."</li><li>"Charge $5 for orders placed on Fridays after 8 PM."</li><li>"Apply a $3 discount for orders placed on Wednesdays."</li><li>"Add a $4 fee for orders placed on the 1st of any month."</li><li>"Offer a $5 discount for purchases made in January."</li></ul>',
         icon: 'tabler:calendar',
       },
       {
         title: 'Product Filtering',
-        description: '$3 per fragile item, 5% on electronics—precision per-product charges.',
+        description: '<ul class="list-disc list-inside text-sm"><li>Charge $3 per item for products tagged <code>fragile</code>.</li><li>Apply 5% fee only on items in the <code>electronics</code> category.</li></ul>',
         icon: 'tabler:filter',
       },
     ]}
@@ -198,15 +198,15 @@ import Lightbox from "~/components/ui/Lightbox.astro";
     items={[
       {
         title: 'Can I apply multiple fees at once?',
-        description: 'Yes! Rule engine for unlimited conditional fees—scale revenue dynamically.',
+        description: 'Yes! With the built-in rule engine, you can add multiple fee rules and apply them conditionally based on cart contents.',
       },
       {
-        title: 'Will this work with Gutenberg checkout?',
-        description: 'Absolutely—fully compatible with block-based pages.',
+        title: 'Will this work with the new Gutenberg-based checkout pages?',
+        description: 'Absolutely. The plugin is fully compatible with both shortcode-based and block-based WooCommerce checkouts.',
       },
       {
         title: 'Are the fees taxable?',
-        description: 'Now with taxable options—include/exclude as needed.',
+        description: 'The plugin includes an option to make fees taxable, ensuring adaptability to various business requirements.',
       },
     ]}
   />
