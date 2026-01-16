@@ -35,6 +35,7 @@ export default defineConfig({
         return [
           "/",
           "/plugins/redirect-on-add-to-cart-for-woocommerce",
+          "/plugins/woocommerce-fee-for-cart-checkout",
           "/contact",
         ].includes(url.pathname);
       },
