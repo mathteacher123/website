@@ -210,8 +210,11 @@ import Lightbox from "~/components/ui/Lightbox.astro";
         description: 'The plugin includes an option to make fees taxable, ensuring adaptability to various business requirements.',
       },
     ]}
-  />
-
+  >
+   <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+</FAQs>
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
