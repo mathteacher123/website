@@ -1,7 +1,8 @@
-# Plugin Page Content
+# plugin-page-content Specification
 
-## MODIFIED Requirements
-
+## Purpose
+TBD - created by archiving change update-woocommerce-fee-use-cases-faqs. Update Purpose after archive.
+## Requirements
 ### Requirement: Accurate Content Representation
 
 Plugin page content SHALL accurately reflect source documentation.
@@ -23,3 +24,4 @@ Given the last FAQ on taxability
 When updating
 Then professionally indicate the option to make fees taxable
 And maintain source accuracy for other FAQs
+
