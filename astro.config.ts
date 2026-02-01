@@ -34,9 +34,9 @@ export default defineConfig({
         const url = new URL(page);
         return [
           "/",
-          "/plugins/redirect-on-add-to-cart-for-woocommerce",
-          "/plugins/woocommerce-fee-for-cart-checkout",
-          "/contact",
+          "/plugins/redirect-on-add-to-cart-for-woocommerce/",
+          "/plugins/woocommerce-fee-for-cart-checkout/",
+          "/contact/",
         ].includes(url.pathname);
       },
     }),
