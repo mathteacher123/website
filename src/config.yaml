@@ -2,7 +2,7 @@ site:
   name: wpxqw
   site: 'https://wpxqw.pages.dev'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: F20cy98KgVwCmA0ih4h40-DT9mi9YQ7WK3as1WQEfCM
 
@@ -11,16 +11,16 @@ metadata:
   title:
     default: wpxqw
     template: '%s — wpxqw'
-  description: "\U0001F680 WooCommerce plugins shop."
+  description: "WooCommerce plugins shop."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: wpxqw
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+#      - url: '~/assets/images/default.png'
+#       width: 1200
+#       height: 628
     type: website
 #  twitter:
 #    handle: '@arthelokyo'
